@@ -44,7 +44,7 @@ public class Product {
     private int getStockQuantity() {
         return stockQuantity;
     }
-    private void displayInfo(){
+    public void displayInfo(){
         System.out.println("ID: " + getId());
         System.out.println("Name: " + getName());
         System.out.println("Category: " + getCategory());
