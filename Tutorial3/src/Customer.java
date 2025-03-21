@@ -5,15 +5,15 @@ public class Customer {
     private String email;
     private boolean isLoyalCustomer;
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private int getId() {
+    public int getId() {
         return id;
     }
 
-    private void setFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 

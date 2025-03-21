@@ -5,43 +5,44 @@ public class Product {
     private double price;
     private int stockQuantity;
 
-    private void setId(int id) {
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    private int getId() {
+    public int getId() {
         return id;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private void setCategory(String category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
-    private String getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    private void setPrice(double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    private double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    private void setStockQuantity(int stockQuantity) {
+    public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 
-    private int getStockQuantity() {
+    public int getStockQuantity() {
         return stockQuantity;
     }
     public void displayInfo(){
