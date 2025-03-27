@@ -1,4 +1,5 @@
-import
+import java.util.Arrays;
+
 public class Order {
     private int id;
     private Customer customer;
@@ -51,7 +52,20 @@ public class Order {
         }
         return total;
     }
-    public double applyDiscount(Product product, boolean ) {}
+    public double applyDiscount(Product product, Customer customer) {
+        if(customer.isLoyalCustomer() == true) {
+            return product.getPrice() * 0.5;
+        }
+        return product.getPrice();
+    }
+    public void displayInfo(){
+        System.out.println("ID: " + getId());
+        System.out.println("Customer: " + getCustomer());
+        System.out.println("Products: " + Arrays.toString(getProducts()));
+        System.out.println("Quantities: " + Arrays.toString(getQuantities()));
+        System.out.println("Order Date: " + getOrderDate());
+        System.out.println("Status: " + getStatus());
+    }
 
 }
 
