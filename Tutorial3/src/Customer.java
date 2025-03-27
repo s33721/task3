@@ -17,31 +17,31 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    private String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    private void setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    private String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    private String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    private void setIsLoyalCustomer(boolean isLoyalCustomer) {
+    public void setIsLoyalCustomer(boolean isLoyalCustomer) {
         this.isLoyalCustomer = isLoyalCustomer;
     }
 
-    private boolean isLoyalCustomer() {
+    public boolean isLoyalCustomer() {
         return isLoyalCustomer;
     }
 

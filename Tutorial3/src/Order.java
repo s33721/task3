@@ -1,3 +1,4 @@
+import
 public class Order {
     private int id;
     private Customer customer;
@@ -43,9 +44,14 @@ public class Order {
     public String getStatus() {
         return status;
     }
-    public int calculateTotalValue(){
-        int total = 0;
-        int productQuantity =
+    public double calculateTotalValue(Product[] products, int[] quantities) {
+        double total = 0;
+        for (int i = 0; i < products.length; i++) {
+            total += products[i].getPrice() * quantities[i];
+        }
+        return total;
     }
+    public double applyDiscount(Product product, boolean ) {}
+
 }
 
