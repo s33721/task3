@@ -12,39 +12,51 @@ public class Order {
     private void setId(int id) {
         this.id = id;
     }
+
     public int getId() {
         return id;
     }
+
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
     public Customer getCustomer() {
         return customer;
     }
+
     public void setProducts(Product[] products) {
         this.products = products;
     }
+
     public Product[] getProducts() {
         return products;
     }
+
     public void setQuantities(int[] quantities) {
         this.quantities = quantities;
     }
+
     public int[] getQuantities() {
         return quantities;
     }
+
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
+
     public String getOrderDate() {
         return orderDate;
     }
+
     public void setStatus(String status) {
         this.status = status;
     }
+
     public String getStatus() {
         return status;
     }
+
     public double calculateTotalValue(Product[] products, int[] quantities) {
         double total = 0;
         for (int i = 0; i < products.length; i++) {
@@ -52,13 +64,15 @@ public class Order {
         }
         return total;
     }
+
     public double applyDiscount(Product product, Customer customer) {
-        if(customer.isLoyalCustomer() == true) {
+        if (customer.isLoyalCustomer()) {
             return product.getPrice() * 0.5;
         }
         return product.getPrice();
     }
-    public void displayInfo(){
+
+    public void displayInfo() {
         System.out.println("ID: " + getId());
         System.out.println("Customer: " + getCustomer());
         System.out.println("Products: " + Arrays.toString(getProducts()));
