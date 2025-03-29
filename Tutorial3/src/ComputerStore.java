@@ -39,6 +39,43 @@ public class ComputerStore {
         return newOrder;
     }
 
+    public void updateStockAfterOrder(Order order) {
+        Product[] orderProducts = order.getProducts();
+        int[] quantities = order.getQuantities();
+        for (int i = 0; i < orderProducts.length; i++) {
+            Product storeProduct = getProductById(orderProducts[i].getId());
+            if (storeProduct != null) {
+                int newStock = storeProduct.getStockQuantity() - quantities[i];
+                storeProduct.setStockQuantity(newStock);
+            }
+        }
+    }
+
+    public void changeOrderStatus(int orderId, String newStatus) {
+        for (Order order : orders) {
+            if (order.getId() == orderId) {
+                order.setStatus(newStatus);
+                return;
+            }
+        }
+        System.out.println("Order not found with ID: " + orderId);
+    }
+
+    public void displayProductsInCategory(String category) {
+        for (Product product : products) {
+            if (product.getCategory().equalsIgnoreCase(category)) {
+                product.displayInfo();
+            }
+        }
+    }
+
+    public void displayCustomerOrders(int customerId) {
+        for (Order order : orders) {
+            if (order.getCustomer().getId() == customerId) {
+                order.displayInfo();
+            }
+        }
+    }
 
 
     private boolean canPlaceOrder(Product[] products, int[] quantities) {
@@ -91,7 +128,4 @@ public class ComputerStore {
         }
         return false;
     }
-
-
-
 }
