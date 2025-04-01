@@ -65,11 +65,11 @@ public class Order {
         return total;
     }
 
-    public double applyDiscount(Product product, Customer customer) {
+    public double applyDiscount() {
         if (customer.isLoyalCustomer()) {
-            return product.getPrice() * 0.5;
+            return calculateTotalValue(products, quantities) * 0.5;
         }
-        return product.getPrice();
+        return calculateTotalValue(products, quantities);
     }
 
     public void displayInfo() {

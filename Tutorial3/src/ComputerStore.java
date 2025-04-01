@@ -18,7 +18,7 @@ public class ComputerStore {
         }
     }
 
-    private void addCustomer(Customer customer) {
+    public void addCustomer(Customer customer) {
         if (!customerExists(customer)) {
             customers.add(customer);
         } else {
@@ -26,7 +26,7 @@ public class ComputerStore {
         }
     }
 
-    private Order createOrder(Customer customer, Product[] products, int[] quantities) {
+    public Order createOrder(Customer customer, Product[] products, int[] quantities) {
         if (!canPlaceOrder(products, quantities)) {
             return null;
         }
@@ -78,7 +78,7 @@ public class ComputerStore {
     }
 
 
-    private boolean canPlaceOrder(Product[] products, int[] quantities) {
+    public boolean canPlaceOrder(Product[] products, int[] quantities) {
         if (products.length != quantities.length) {
             System.out.println("");
             return false;
@@ -100,7 +100,7 @@ public class ComputerStore {
         return true;
     }
 
-    private Product getProductById(int id) {
+    public Product getProductById(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
                 return product;
@@ -110,7 +110,7 @@ public class ComputerStore {
         return null;
     }
 
-    private boolean customerExists(Customer customer) {
+    public boolean customerExists(Customer customer) {
         for (var existingCustomer : customers) {
             if (existingCustomer.getId() == customer.getId()) {
                 return true;
@@ -119,7 +119,7 @@ public class ComputerStore {
         return false;
     }
 
-    private boolean orderExists(Order order) {
+    public boolean orderExists(Order order) {
         for (var existingOrder : orders) {
             if (existingOrder.getId() == order.getId()) {
                 return true;
